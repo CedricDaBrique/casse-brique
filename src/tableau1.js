@@ -49,8 +49,6 @@ class Tableau1 extends Phaser.Scene {
         this.balle.body.setAllowGravity(false)
         this.balle.setVelocity(250)
         this.balle.body.setMaxVelocity(500, 500)
-
-
         this.physics.add.collider(this.balle, this.bas)
         this.physics.add.collider(this.balle, this.haut)
         this.physics.add.collider(this.balle, this.gauche)
@@ -67,7 +65,12 @@ class Tableau1 extends Phaser.Scene {
                 rbrique.setDisplaySize(60, 30)
                 rbrique.setImmovable(true)
                 rbrique.body.setAllowGravity(false)
-                this.physics.add.collider(this.balle, rbrique)
+                this.physics.add.collider(this.balle,rbrique, function(){
+                    rbrique.destroy(true);
+                });
+
+
+
 
 
 
@@ -85,14 +88,14 @@ class Tableau1 extends Phaser.Scene {
         this.input.keyboard.on('keydown', function (kevent) {
             switch (kevent.keyCode) {
                 case Phaser.Input.Keyboard.KeyCodes.LEFT:
-                    me.bas.setVelocityX(-200)
-                    me.basSpeed = 2
+                    me.bas.setVelocityX(-300)
+
                     break;
 
                 case Phaser.Input.Keyboard.KeyCodes.RIGHT:
-                    me.bas.setVelocityX(200)
-                    me.basSpeed = -2
-                    break;
+                    me.bas.setVelocityX(300)
+
+                    break
 
             }
         });
@@ -100,12 +103,12 @@ class Tableau1 extends Phaser.Scene {
             switch (kevent.keyCode) {
                 case Phaser.Input.Keyboard.KeyCodes.LEFT:
                     me.bas.setVelocityX(0)
-                    me.basSpeed = 0
+
                     break;
 
                 case Phaser.Input.Keyboard.KeyCodes.RIGHT:
                     me.bas.setVelocityX(0)
-                    me.basSpeed = 0
+
                     break;
 
             }
