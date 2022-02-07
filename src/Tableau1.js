@@ -58,6 +58,7 @@ class Tableau1 extends Phaser.Scene {
 
 
 
+
         //Brique
         for (let y = 5; y < 10; y++) {
             for (let x = 2; x < 11; x++) {
@@ -77,7 +78,6 @@ class Tableau1 extends Phaser.Scene {
 
             }
         }
-
 
 
         this.initKeyboard();
@@ -116,3 +116,7 @@ class Tableau1 extends Phaser.Scene {
         });
     }
 }
+
+
+
+
