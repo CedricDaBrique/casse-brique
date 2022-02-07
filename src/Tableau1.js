@@ -1,4 +1,4 @@
-class tableau1 extends Phaser.Scene {
+class Tableau1 extends Phaser.Scene {
 
 
     preload() {
