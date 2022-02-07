@@ -8,6 +8,7 @@ class tableau1 extends Phaser.Scene {
     }
 
     create() {
+        console.log("Test")
         this.hauteur = 800
         this.largeur = 800
 
